@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
         port: 3306,
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'Weezer#123',
         database: 'budgetBuddy_db'
     })
 };
