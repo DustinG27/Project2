@@ -1,3 +1,40 @@
+// Pulls in sqlize package
+var Sequelize = require("sequelize");
+// reference connection to database
+var sequelize = require("../config/connection");
+
+// Creates Bank model
+var Bank = sequelize.define("bank", {
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  name: {
+    type: Sequelize.STRING,
+  },
+  catagory: {
+    type: Sequelize.STRING,
+    defaultVaule: "General"
+  },
+  amount: {
+    type: Sequelize.INTEGER
+  },
+  total: {
+    type: Sequelize.INTEGER
+  }
+}, {
+  timestamps: true
+});
+
+// syncs with database
+Bank.sync();
+
+//export Bank
+module.exports = Bank;
+
+
+/*
 "use strict";
 
 var fs = require("fs");
@@ -40,3 +77,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+*/

@@ -1,19 +1,18 @@
-var mysql = require("mysql");
-var connection;
-
 if (process.env.JAWSDB_URL) {
   // Database is JawsDB on Heroku
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   // Database is local
-  connection = mysql.createConnection({
-    port: 3000,
+  var Sequelize = require("sequelize");
+
+  var sequelize = new Sequelize("budgetBuddy_db", "root", "Weezer#123", {
     host: "localhost",
-    user: "root",
-    password: "Weezer#123",
-    database: "budgetBuddy_db"
+    dialect: "mysql",
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
   });
 }
-
-connection.connect();
-module.exports = connection;
+module.exports = sequelize;

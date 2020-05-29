@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "Weezer#123",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
@@ -16,7 +16,8 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "database":"budgetBuddy_production"
   }
 }
 
