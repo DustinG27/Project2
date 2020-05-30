@@ -15,38 +15,6 @@ $("#subFunds").on("click", function() {
   });
 });
 
-$("#expenceSubmit").on("click", function(event) {
-  event.preventDefault();
-
-  var newTransaction = {
-    id: $("#id")
-      .val()
-      .trim(),
-    name: $("#name")
-      .val()
-      .trim(),
-    catagory: $("#catagory")
-      .val()
-      .trim(),
-    amount: $("#amount")
-      .val()
-      .trim(),
-    total: $("#total")
-      .val()
-      .trim()
-  };
-
-  $.post("/api/new", newTransaction).done(function(data) {
-    console.log(data);
-
-    $("#id").val("");
-    $("#name").val("");
-    $("#catagory").val("");
-    $("#amount").val("");
-    $("#total").val("");
-  });
-});
-
 // closing the modal
 $(".close").on("click", function() {
   $(".bg-modal").css("display", "none");
@@ -76,6 +44,38 @@ $("#incomeSubmit").one("click", function() {
   console.log(nameAmount);
   console.log(incomeAmount);
   console.log(catagoryAmout);
+
+  $("#expenceSubmit").on("click", function(event) {
+    event.preventDefault();
+
+    var newTransaction = {
+      id: $("#id")
+        .val()
+        .trim(),
+      name: $("#name")
+        .val()
+        .trim(),
+      catagory: $("#catagory")
+        .val()
+        .trim(),
+      amount: $("#amount")
+        .val()
+        .trim(),
+      total: $("#total")
+        .val()
+        .trim()
+    };
+
+    $.post("/api/new", newTransaction).done(function(data) {
+      console.log(data);
+
+      $("#id").val("");
+      $("#name").val("");
+      $("#catagory").val("");
+      $("#amount").val("");
+      $("#total").val("");
+    });
+  });
 });
 
 //click function for the add funds submit button

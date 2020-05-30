@@ -1,5 +1,6 @@
 // var db = require("../models");
 var path = require("path");
+// var Bank = require("../models");
 
 module.exports = function(app) {
   // Load index page

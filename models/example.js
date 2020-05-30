@@ -1,7 +1,24 @@
 module.exports = function(sequelize, DataTypes) {
   var Transaction = sequelize.define("Transaction", {
-    text: DataTypes.INTEGER,
-    description: DataTypes.TEXT
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
+    name: {
+      type: DataTypes.STRING,
+      defaultValue: "Null"
+    },
+    catagory: {
+      type: DataTypes.STRING,
+      defaultVaule: "General"
+    },
+    amount: {
+      type: DataTypes.INTEGER
+    },
+    total: {
+      type: DataTypes.INTEGER
+    }
   });
   return Transaction;
 };
