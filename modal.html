@@ -30,7 +30,7 @@
 
     //Total Money
     var totalMoney;
-    $.get("/api/all", function(data)) {
+    $.get("/api/all", function(data) {
 
         for (var i = 0; i < data.length; i++) {
 
@@ -38,7 +38,7 @@
             totalMoney += data[i].amount;  
             }
         }
-    }
+    });
     console.log(totalMoney);
 
     // Get the modal

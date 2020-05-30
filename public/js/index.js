@@ -1,12 +1,12 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $enterName = $("#enterName");
+var $enterAmount = $("#enterAmount");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveTransaction: function(example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -16,13 +16,13 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getTransactions: function() {
     return $.ajax({
       url: "api/examples",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteTransaction: function(id) {
     return $.ajax({
       url: "api/examples/" + id,
       type: "DELETE"
@@ -65,8 +65,8 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    text: $enterName.val().trim(),
+    description: $enterAmount.val().trim()
   };
 
   if (!(example.text && example.description)) {
@@ -78,7 +78,7 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
+  $enterName.val("");
   $exampleDescription.val("");
 };
 
