@@ -59,6 +59,7 @@
 			});
 			</script>
 		</div>
+
 		<br>
 		<div class="row">
 			<div class="col-lg-2"></div>
@@ -68,6 +69,167 @@
 			<div class="col-lg-2"></div>
 		</div>
 	</div>
+
+	<!-- modal for subtracting funds -->
+
+    <div class="bg-modal" id="subExpense">
+		<div class="modal-container">
+		  <div class="speech-bubble">
+			<div class="modal-content p-5">
+			  <div>
+				<img
+				  src="/styles/budgetBuddy.png"
+				  alt="budgetBuddyAvatar"
+				  id="avatar"
+				/>
+			  </div>
+			  <div class="close">+</div>
+			  <div class="input-group input-group-sm mb-3" method="POST" role="form" id="subForm">
+				<div class="input-group-prepend">
+				  <span class="input-group-text" id="enterName"
+					>Name:
+				  </span>
+  
+				  <input
+					type="text"
+					class="form-control"
+					id="incomeForm"
+					aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-sm"
+				  />
+				</div>
+				<div class="input-group-prepend">
+				  <span class="input-group-text" id="enterAmount"
+					>Enter amount:
+				  </span>
+  
+				  <input
+					type="text"
+					class="form-control"
+					id="incomeForm"
+					aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-sm"
+				  />
+				</div>
+				<div class="form-group w-100 mt-2">
+				  <label for="exampleFormControlSelect1"
+					>Select Purchase Type:
+				  </label>
+				  <select class="form-control" id="catagoryInput">
+					<option>Food</option>
+					<option>Living Expenses</option>
+					<option>Entertainment</option>
+					<option>Gas</option>
+					<option>Social</option>
+				  </select>
+				</div>
+				<button
+				  type="button"
+				  class="btn btn-outline-primary"
+				  id="expenceSubmit"
+				>
+				  Submit
+				</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+  
+	  <!-- modal for adding funds -->
+  
+	  <div class="bg-modal">
+		<div class="modal-container">
+		  <div class="speech-bubble">
+			<div class="modal-content p-5">
+			  <div>
+				<img
+				  src="/styles/budgetBuddy.png"
+				  alt="budgetBuddyAvatar"
+				  id="avatar"
+				/>
+			  </div>
+			  <div class="close">+</div>
+			  <div class="input-group input-group-sm mb-3" method="POST" role="form" id="addForm">
+				<div class="input-group-prepend">
+				  <span class="input-group-text" id="enterName"
+					>Name:
+				  </span>
+  
+				  <input
+					type="text"
+					class="form-control"
+					id="incomeForm"
+					aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-sm"
+				  />
+				</div>
+				<div class="input-group-prepend">
+				  <span class="input-group-text" id="enterAmount"
+					>Enter amount:
+				  </span>
+  
+				  <input
+					type="text"
+					class="form-control"
+					id="incomeForm"
+					aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-sm"
+				  />
+				</div>
+				<div class="form-group w-100 mt-2">
+				  <label for="exampleFormControlSelect1"
+					>Select Purchase Type:
+				  </label>
+				  <select class="form-control" id="catagoryInput">
+					<option>Food</option>
+					<option>Living Expenses</option>
+					<option>Entertainment</option>
+					<option>Gas</option>
+					<option>Social</option>
+				  </select>
+				</div>
+				<button
+				  type="button"
+				  class="btn btn-outline-primary"
+				  id="incomeSubmit"
+				>
+				  Submit
+				</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+	<div class="bB-modal">
+		<div class="modal-container">
+		  <div class="speech-bubble">
+			<div class="modal-content p-5">
+			  <div>
+				<img
+				  src="/styles/budgetBuddy.png"
+				  alt="budgetBuddyAvatar"
+				  id="avatar"
+				/>
+			  </div>
+			  <div class="close">+</div>
+			  <div id="modalText"></div>
+						  <button
+							  type="button"
+							  class="btn btn-outline-primary"
+							  id="expenceSubmit"
+						  >
+							  Submit
+						  </button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

@@ -5,7 +5,7 @@ $("#subFunds").on("click", function() {
   console.log("submit press");
 
   // display modal
-  $("#subExpence").css("display", "flex");
+  $("#subExpense").css("display", "flex");
 
   // lock scrolling
   $("html, body").css({
@@ -15,9 +15,106 @@ $("#subFunds").on("click", function() {
   });
 });
 
+//Function for Submit Expense 
+$("#expenseSubmit").on("click", function(event) {
+  event.preventDefault();
+
+  var newTransaction = {
+    id: $("#id")
+      .val()
+      .trim(),
+    name: $("#name")
+      .val()
+      .trim(),
+    catagory: $("#catagory")
+      .val()
+      .trim(),
+    amount:
+      $("#amount")
+        .val()
+        .trim() * -1,
+    total: $("#total")
+      .val()
+      .trim()
+  };
+
+  // display modal
+  $("#bB-modal").css("display", "flex");
+
+  // lock scrolling
+  $("html, body").css({
+    overflow: "hidden",
+    height: "100%",
+    width: "100%"
+  });
+
+  $.post("/api/new", newTransaction).done(function(data) {
+    console.log(data);
+
+    $("#id").val("");
+    $("#name").val("");
+    $("#catagory").val("");
+    $("#amount").val("");
+    $("#total").val("");
+  });
+
+  // closing the modal
+  $(".close").on("click", function() {
+    $(".bB-modal").css("display", "none");
+
+    $("html, body").css({
+      overflow: "auto",
+      height: "auto"
+    });
+  });
+});
+
+// Function for Submit Income
+$("#incomeSubmit").on("click", function(event) {
+  event.preventDefault();
+
+  var newTransaction = {
+    id: $("#id")
+      .val()
+      .trim(),
+    name: $("#name")
+      .val()
+      .trim(),
+    catagory: $("#catagory")
+      .val()
+      .trim(),
+    amount: $("#amount")
+      .val()
+      .trim(),
+    total: $("#total")
+      .val()
+      .trim()
+  };
+
+  // display modal
+  $("#bB-modal").css("display", "flex");
+
+  // lock scrolling
+  $("html, body").css({
+    overflow: "hidden",
+    height: "100%",
+    width: "100%"
+  });
+
+  $.post("/api/new", newTransaction).done(function(data) {
+    console.log(data);
+
+    $("#id").val("");
+    $("#name").val("");
+    $("#catagory").val("");
+    $("#amount").val("");
+    $("#total").val("");
+  });
+});
+
 // closing the modal
 $(".close").on("click", function() {
-  $(".bg-modal").css("display", "none");
+  $(".bB-modal").css("display", "none");
 
   $("html, body").css({
     overflow: "auto",
@@ -44,38 +141,6 @@ $("#incomeSubmit").one("click", function() {
   console.log(nameAmount);
   console.log(incomeAmount);
   console.log(catagoryAmout);
-
-  $("#expenceSubmit").on("click", function(event) {
-    event.preventDefault();
-
-    var newTransaction = {
-      id: $("#id")
-        .val()
-        .trim(),
-      name: $("#name")
-        .val()
-        .trim(),
-      catagory: $("#catagory")
-        .val()
-        .trim(),
-      amount: $("#amount")
-        .val()
-        .trim(),
-      total: $("#total")
-        .val()
-        .trim()
-    };
-
-    $.post("/api/new", newTransaction).done(function(data) {
-      console.log(data);
-
-      $("#id").val("");
-      $("#name").val("");
-      $("#catagory").val("");
-      $("#amount").val("");
-      $("#total").val("");
-    });
-  });
 });
 
 //click function for the add funds submit button
