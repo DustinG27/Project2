@@ -12,6 +12,7 @@ var Bank = sequelize.define("bank", {
   },
   name: {
     type: Sequelize.STRING,
+    defaultValue: "Null"
   },
   catagory: {
     type: Sequelize.STRING,
