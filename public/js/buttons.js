@@ -60,7 +60,7 @@ $("#expenseSubmit").on("click", function(event) {
 
   // closing the modal
   $(".close").on("click", function() {
-    $(".bB-modal").css("display", "none");
+    $("#subExpense", ".bB-modal").css("display", "none");
 
     $("html, body").css({
       overflow: "auto",
@@ -92,7 +92,7 @@ $("#incomeSubmit").on("click", function(event) {
   };
 
   // display modal
-  $("#bB-modal").css("display", "flex");
+  $("#subExpense").css("display", "flex");
 
   // lock scrolling
   $("html, body").css({
@@ -114,7 +114,7 @@ $("#incomeSubmit").on("click", function(event) {
 
 // closing the modal
 $(".close").on("click", function() {
-  $(".bB-modal").css("display", "none");
+  $("#subExpense").css("display", "none");
 
   $("html, body").css({
     overflow: "auto",
@@ -150,7 +150,7 @@ $("#addFunds").on("click", function() {
   console.log("submit press");
 
   // display modal
-  // $(".bg-modal").css("display", "flex");
+  $(".bg-modal").css("display", "flex");
 
   // lock scrolling
   $("html, body").css({
@@ -199,53 +199,53 @@ window.onclick = function(event) {
 };
 
 //Function for expense button
-//$("#expenseSubmit").on("click", function(event) {
+$("#expenseSubmit").on("click", function(event) {
+  //Budget Buddy Hide/Show
+  //       $("#budgetBuddy").toggle();
 
-//Budget Buddy Hide/Show
-//       $("#budgetBuddy").toggle();
-
-//Condtional for remark
-expensePercent;
-if (expense === "food") {
-  expensePercent = 10;
-} else if (expense === "living expense") {
-  expensePercent = 50;
-} else if (expense === "entertainment") {
-  expensePercent = 5;
-} else if (expense === "gas") {
-  expensePercent = 30;
-} else if (expense === "social") {
-  expensePercent = 5;
-}
-
-//array of postive remarks
-var positive = [
-  "Right on track, keep it up!",
-  "Look at those gains!",
-  "Cha-Ching!!",
-  "Everything is looking good here",
-  "You're that much closer to your goal!"
-];
-
-//array of negative remarks
-var negative = [
-  "Are you sure you reaaaaally need that?",
-  "Now that's just a guilty pleasure",
-  "Uhhh let's take a second and think about this",
-  "Wait wait wait, why do you need this?",
-  "Don't. Just dont't."
-];
-
-isPositive();
-
-function isPositive() {
-  var randomPositive = positive[Math.floor(Math.random() * positive.length)];
-  var randomNegative = negative[Math.floor(Math.random() * negative.length)];
-
-  targetExpense = totalMoney / expensePercent;
-  if (expensePercent < TargetExpense) {
-    $("#modalText").text(randomPositive);
-  } else {
-    $("#modalText").text(randomNegative);
+  //Condtional for remark
+  expensePercent;
+  if (expense === "food") {
+    expensePercent = 10;
+  } else if (expense === "living expense") {
+    expensePercent = 50;
+  } else if (expense === "entertainment") {
+    expensePercent = 5;
+  } else if (expense === "gas") {
+    expensePercent = 30;
+  } else if (expense === "social") {
+    expensePercent = 5;
   }
-}
+
+  //array of postive remarks
+  var positive = [
+    "Right on track, keep it up!",
+    "Look at those gains!",
+    "Cha-Ching!!",
+    "Everything is looking good here",
+    "You're that much closer to your goal!"
+  ];
+
+  //array of negative remarks
+  var negative = [
+    "Are you sure you reaaaaally need that?",
+    "Now that's just a guilty pleasure",
+    "Uhhh let's take a second and think about this",
+    "Wait wait wait, why do you need this?",
+    "Don't. Just dont't."
+  ];
+
+  isPositive();
+
+  function isPositive() {
+    var randomPositive = positive[Math.floor(Math.random() * positive.length)];
+    var randomNegative = negative[Math.floor(Math.random() * negative.length)];
+
+    targetExpense = totalMoney / expensePercent;
+    if (expensePercent < TargetExpense) {
+      $("#modalText").text(randomPositive);
+    } else {
+      $("#modalText").text(randomNegative);
+    }
+  }
+});
